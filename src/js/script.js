@@ -175,7 +175,6 @@ var Auth = {
       SpotifyApi.getUserProfile();
       SpotifyApi.getTopTracks();
       SpotifyApi.getTopArtists();
-      document.querySelector("#login-button").style.visibility = "hidden";
 
     }
   },
@@ -223,6 +222,7 @@ if (location.hash) {
   window.location = SITE_URL;
   document.querySelector(".container").style.visibility = "visible";
   document.querySelector(".profile").style.visibility = "visible";
+  document.querySelector("#login-button").style.visibility = "hidden";
 
 } else {
   if (Config.getValidToken()) {
@@ -231,9 +231,12 @@ if (location.hash) {
     SpotifyApi.getTopArtists();
     document.querySelector(".container").style.visibility = "visible";
     document.querySelector(".profile").style.visibility = "visible";
+    document.querySelector("#login-button").style.visibility = "hidden";
+
   }
+  document.querySelector(".container").style.visibility = "hidden";
+  document.querySelector(".profile").style.visibility = "hidden";
 }
 
 document.querySelector("#login-button").addEventListener("click", authenticate);
-document.querySelector(".container").style.visibility = "hidden";
-document.querySelector(".profile").style.visibility = "hidden";
+
