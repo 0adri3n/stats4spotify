@@ -136,7 +136,7 @@ function authenticate() {
   window.location = Auth.getAuthUrl(SITE_URL);
 }
 
-if (location.search.indexOf("auth_callback") > 0) {
+if (location.search.indexOf("#access_token") > 0) {
   console.log(location)
   Auth.parseResponse(location);
   window.location = SITE_URL;
