@@ -19,7 +19,7 @@ var SpotifyApi = {
 var Auth = {
   getAuthUrl: function (siteUrl) {
     var clientId = "9e5bc3ca56f746b49e1e1f7049706043";
-    var redirectUri = encodeURIComponent(siteUrl + "?auth_callback");
+    var redirectUri = encodeURIComponent(siteUrl + "/index.html");
     return (
       "https://accounts.spotify.com/authorize?client_id=" +
       clientId +
