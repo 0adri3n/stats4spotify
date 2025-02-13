@@ -141,6 +141,7 @@ if (location.search.indexOf("#access_token") > 0) {
   Auth.parseResponse(location);
   window.location = SITE_URL;
 } else {
+  console.log(location)
   console.log(location.search.indexOf("#access_token"));
   console.log(Config)
   if (Config.getValidToken()) {
