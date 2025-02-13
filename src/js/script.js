@@ -151,3 +151,4 @@ if (location.hash) {
 }
 
 document.querySelector("#login-button").addEventListener("click", authenticate);
+localStorage.setItem("test", "test");
