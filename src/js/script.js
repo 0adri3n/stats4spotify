@@ -175,9 +175,7 @@ var Auth = {
       SpotifyApi.getUserProfile();
       SpotifyApi.getTopTracks();
       SpotifyApi.getTopArtists();
-      document
-        .querySelector("#login-button")
-        .style.display="none"
+      document.querySelector("#login-button").style.visibility = "hidden";
 
     }
   },
@@ -223,19 +221,19 @@ function authenticate() {
 if (location.hash) {
   Auth.parseResponse(location);
   window.location = SITE_URL;
-  document.querySelector(".container").style.display = "flex";
-  document.querySelector(".profile").style.display = "block";
+  document.querySelector(".container").style.visibility = "visible";
+  document.querySelector(".profile").style.visibility = "visible";
 
 } else {
   if (Config.getValidToken()) {
     SpotifyApi.getUserProfile();
     SpotifyApi.getTopTracks();
     SpotifyApi.getTopArtists();
-    document.querySelector(".container").style.display = "flex";
-    document.querySelector(".profile").style.display = "block";
+    document.querySelector(".container").style.visibility = "visible";
+    document.querySelector(".profile").style.visibility = "visible";
   }
 }
 
 document.querySelector("#login-button").addEventListener("click", authenticate);
-document.querySelector(".container").style.display = "none";
-document.querySelector(".profile").style.display = "none";
+document.querySelector(".container").style.visibility = "hidden";
+document.querySelector(".profile").style.visibility = "hidden";
