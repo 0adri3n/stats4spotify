@@ -136,14 +136,11 @@ function authenticate() {
   window.location = Auth.getAuthUrl(SITE_URL);
 }
 
-if (location.search.indexOf("#access_token") > 0) {
+if (location.hash) {
   console.log(location)
-  Auth.parseResponse(location);
+  Auth._parseHash(location.hash);
   window.location = SITE_URL;
 } else {
-  console.log(location.hash)
-  console.log(location.search.indexOf("#access_token"));
-  console.log(Config)
   if (Config.getValidToken()) {
     SpotifyApi.getUserProfile();
     SpotifyApi.getTopTracks();
