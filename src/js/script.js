@@ -87,6 +87,7 @@ var Auth = {
   parseResponse: function (url) {
     var hash = url.hash;
     var response = this._parseHash(hash);
+    
     if (response) {
       Config.setToken(response["access_token"]);
       Config.setExpiresAt(response["expires_in"]);
@@ -135,6 +136,7 @@ function authenticate() {
 }
 
 if (location.search.indexOf("auth_callback") > 0) {
+  console.log(location)
   Auth.parseResponse(location);
   window.location = SITE_URL;
 } else {
