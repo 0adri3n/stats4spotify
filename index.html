@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stats4spotify</title>
+    <link rel="icon" href="src/img/spot_ico.ico">
+
     <style>
         body {
             font-family: Consolas, monospace;
@@ -21,6 +23,7 @@
         }
         header h1 {
             margin: 0;
+            font-size: clamp(20px, 5vw, 32px); 
         }
         .github-btn {
             background-color: white;
@@ -34,7 +37,7 @@
         .profile {
             text-align: center;
             margin-bottom: 20px;
-            margin-top: 20px;
+            margin-top: 10px; 
         }
 
         .profile img {
@@ -85,8 +88,9 @@
             max-width: 1200px;
             margin: 20px auto;
             text-align: center;
-            height: 80vh; /* Fixe une hauteur pour le scroll */
-            overflow-y: hidden; /* Empêche le scroll global */
+            height: 80vh; 
+            overflow-y: hidden;
+            margin-bottom: 10px auto;
         }
 
         .scrollable {
