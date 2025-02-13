@@ -176,7 +176,7 @@ var Auth = {
       SpotifyApi.getTopTracks();
       SpotifyApi.getTopArtists();
       document
-        .getElementsByClassName("#login-button")
+        .querySelector("#login-button")
         .style.display="none"
 
     }
@@ -234,3 +234,4 @@ if (location.hash) {
 }
 
 document.querySelector("#login-button").addEventListener("click", authenticate);
+document.querySelector(".container").style.display = "none";
