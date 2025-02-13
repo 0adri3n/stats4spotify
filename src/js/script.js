@@ -243,4 +243,6 @@ if (location.hash) {
 }
 
 document.querySelector("#login-button").addEventListener("click", authenticate);
-localStorage.setItem("test", "test");
+if (Config.getValidToken() == false) {
+  document.querySelector("#container").style.display = "none";
+}
