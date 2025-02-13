@@ -2,6 +2,13 @@
 
 A simple static web interface to display your Spotify stats.  
 
+## 📸 Screenshots
+
+![image](https://github.com/user-attachments/assets/34e29150-5ab6-4038-b6b2-98be3d5a55bf)
+
+![image](https://github.com/user-attachments/assets/aeb65962-cf40-48f9-9e70-8a1b222d7a2c)
+
+
 ## 🚀 Overview  
 
 This project displays:  
@@ -17,7 +24,7 @@ The goal is to provide a quick and visually appealing way to check your Spotify 
 
 ## 🔗 Link  
 
-👉 **[Project link (if hosted)](https://0adri3n.github.io/stats4spotify/)**  
+👉 **[Project link hosted on Github](https://0adri3n.github.io/stats4spotify/)**  
 
 ## 🛠️ How to Use?  
 
