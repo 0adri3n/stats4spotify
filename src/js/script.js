@@ -90,6 +90,7 @@ var Auth = {
     var response = this._parseHash(hash);
     
     if (response) {
+      console.log("Requesting APIs...")
       Config.setToken(response["access_token"]);
       Config.setExpiresAt(response["expires_in"]);
       SpotifyApi.getUserProfile();
