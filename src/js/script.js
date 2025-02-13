@@ -96,7 +96,7 @@ var Auth = {
       SpotifyApi.getUserProfile();
       SpotifyApi.getTopTracks();
       SpotifyApi.getTopArtists();
-      window.location = SITE_URL;
+      console.log(Config)
     }
   },
 
