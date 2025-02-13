@@ -239,7 +239,7 @@ if (location.hash) {
     SpotifyApi.getUserProfile();
     SpotifyApi.getTopTracks();
     SpotifyApi.getTopArtists();
-    document.getElementsByClassName("#container").style.display = "flex";
+    document.getElementsByClassName("container").style.display = "flex";
   }
 }
 
