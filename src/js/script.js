@@ -86,6 +86,7 @@ var Auth = {
 
   parseResponse: function (url) {
     var hash = url.hash;
+    console.log(hash)
     var response = this._parseHash(hash);
     
     if (response) {
