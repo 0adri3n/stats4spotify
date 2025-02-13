@@ -31,10 +31,25 @@
             font-weight: bold;
         }
 
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         .profile img {
             border-radius: 50%;
             width: 150px;
             height: 150px;
+            border: 3px solid #1DB954;
+        }
+
+        .profile h2 {
+            margin: 10px 0 5px;
+        }
+
+        .profile p {
+            font-size: 14px;
+            color: #ccc;
         }
 
         .top-items {
@@ -120,45 +135,49 @@
             <p>Followers: 0</p>
         </div>
 
-        <!-- Colonne gauche : Artistes -->
-        <div class="scrollable left">
-            <h2>Top Artists</h2>
+        <div class="content">
+            <!-- Colonne gauche : Artistes -->
+            <div class="scrollable left">
+                <h2>Top Artists</h2>
 
-            <div class="card">
-                <h3>[This year]</h3>
-                <div class="top-items artists long"></div>
+                <div class="card">
+                    <h3>[This year]</h3>
+                    <div class="top-items artists long"></div>
+                </div>
+
+                <div class="card">
+                    <h3>[Last 6 months]</h3>
+                    <div class="top-items artists medium"></div>
+                </div>
+
+                <div class="card">
+                    <h3>[This month]</h3>
+                    <div class="top-items artists short"></div>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>[Last 6 months]</h3>
-                <div class="top-items artists medium"></div>
+            <!-- Colonne droite : Tracks -->
+            <div class="scrollable right">
+                <h2>Top Tracks</h2>
+
+                <div class="card">
+                    <h3>[This year]</h3>
+                    <div class="top-items tracks long"></div>
+                </div>
+
+                <div class="card">
+                    <h3>[Last 6 months]</h3>
+                    <div class="top-items tracks medium"></div>
+                </div>
+
+                <div class="card">
+                    <h3>[This month]</h3>
+                    <div class="top-items tracks short"></div>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>[This month]</h3>
-                <div class="top-items artists short"></div>
-            </div>
         </div>
 
-        <!-- Colonne droite : Tracks -->
-        <div class="scrollable right">
-            <h2>Top Tracks</h2>
-
-            <div class="card">
-                <h3>[This year]</h3>
-                <div class="top-items tracks long"></div>
-            </div>
-
-            <div class="card">
-                <h3>[Last 6 months]</h3>
-                <div class="top-items tracks medium"></div>
-            </div>
-
-            <div class="card">
-                <h3>[This month]</h3>
-                <div class="top-items tracks short"></div>
-            </div>
-        </div>
     </div>
 
 

@@ -20,7 +20,6 @@ var SpotifyApi = {
         console.error("Error fetching profile:", error);
         return;
       }
-      console.log("User Profile:", data);
       document.querySelector(".profile img").src =
         data.images[0]?.url || "default.png";
       document.querySelector(".profile h2").textContent = data.display_name;
@@ -38,7 +37,6 @@ var SpotifyApi = {
           console.error("Error fetching top tracks:", error);
           return;
         }
-        console.log("Top Tracks:", data.items);
         var container = document.querySelector(".top-items.tracks.long");
         container.innerHTML = "";
         data.items.forEach((track) => {
@@ -59,7 +57,6 @@ var SpotifyApi = {
           console.error("Error fetching top tracks:", error);
           return;
         }
-        console.log("Top Tracks:", data.items);
         var container = document.querySelector(".top-items.tracks.medium");
         container.innerHTML = "";
         data.items.forEach((track) => {
@@ -80,7 +77,6 @@ var SpotifyApi = {
           console.error("Error fetching top tracks:", error);
           return;
         }
-        console.log("Top Tracks:", data.items);
         var container = document.querySelector(".top-items.tracks.short");
         container.innerHTML = "";
         data.items.forEach((track) => {
@@ -106,7 +102,6 @@ var SpotifyApi = {
           console.error("Error fetching top artists:", error);
           return;
         }
-        console.log("Top Artists:", data.items);
         var container = document.querySelector(".top-items.artists.long");
         container.innerHTML = "";
         data.items.forEach((artist) => {
@@ -127,7 +122,6 @@ var SpotifyApi = {
           console.error("Error fetching top artists:", error);
           return;
         }
-        console.log("Top Artists:", data.items);
         var container = document.querySelector(".top-items.artists.medium");
         container.innerHTML = "";
         data.items.forEach((artist) => {
@@ -148,7 +142,6 @@ var SpotifyApi = {
           console.error("Error fetching top artists:", error);
           return;
         }
-        console.log("Top Artists:", data.items);
         var container = document.querySelector(".top-items.artists.short");
         container.innerHTML = "";
         data.items.forEach((artist) => {
@@ -175,11 +168,8 @@ var Auth = {
   parseResponse: function (url) {
     console.log(url)
     var hash = url.hash;
-    console.log(hash)
     var response = this._parseHash(hash);
-    console.log(response)
     if (response) {
-      console.log("Requesting APIs...")
       Config.setToken(response["access_token"]);
       Config.setExpiresAt(response["expires_in"]);
       SpotifyApi.getUserProfile();
@@ -233,13 +223,13 @@ function authenticate() {
 if (location.hash) {
   Auth.parseResponse(location);
   window.location = SITE_URL;
-  document.getElementsByClassName("container").style.display = "flex";
+  document.querySelector(".container").style.display = "flex";
 } else {
   if (Config.getValidToken()) {
     SpotifyApi.getUserProfile();
     SpotifyApi.getTopTracks();
     SpotifyApi.getTopArtists();
-    document.getElementsByClassName("container").style.display = "flex";
+    document.querySelector(".container").style.display = "flex";
   }
 }
 
