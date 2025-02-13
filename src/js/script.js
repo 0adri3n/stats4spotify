@@ -186,7 +186,7 @@ var Auth = {
       SpotifyApi.getTopTracks();
       SpotifyApi.getTopArtists();
       document
-        .querySelector("#login-button")
+        .getElementsByClassName("#login-button")
         .style.display="none"
 
     }
@@ -233,13 +233,13 @@ function authenticate() {
 if (location.hash) {
   Auth.parseResponse(location);
   window.location = SITE_URL;
-  document.querySelector("#container").style.display = "flex";
+  document.getElementsByClassName("container").style.display = "flex";
 } else {
   if (Config.getValidToken()) {
     SpotifyApi.getUserProfile();
     SpotifyApi.getTopTracks();
     SpotifyApi.getTopArtists();
-    document.querySelector("#container").style.display = "flex";
+    document.getElementsByClassName("#container").style.display = "flex";
   }
 }
 
