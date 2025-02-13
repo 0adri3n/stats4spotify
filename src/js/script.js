@@ -234,9 +234,11 @@ if (location.hash) {
     document.querySelector("#login-button").style.visibility = "hidden";
 
   }
-  document.querySelector(".container").style.visibility = "hidden";
-  document.querySelector(".profile").style.visibility = "hidden";
+
 }
 
 document.querySelector("#login-button").addEventListener("click", authenticate);
-
+if (Config.getValidToken() == null){
+  document.querySelector(".container").style.visibility = "hidden";
+  document.querySelector(".profile").style.visibility = "hidden";
+}
