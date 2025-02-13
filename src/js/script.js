@@ -141,7 +141,7 @@ function authenticate() {
 if (location.hash) {
   console.log(location)
   localStorage.setItem("hash", location.hash);
-  Auth.parseResponse(location.hash);
+  Auth.parseResponse(location);
 } else {
   if (Config.getValidToken()) {
     SpotifyApi.getUserProfile();
