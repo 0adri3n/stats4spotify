@@ -88,7 +88,7 @@ var Auth = {
     var hash = url.hash;
     console.log(hash)
     var response = this._parseHash(hash);
-    
+    console.log(response)
     if (response) {
       console.log("Requesting APIs...")
       Config.setToken(response["access_token"]);
@@ -140,6 +140,7 @@ function authenticate() {
 
 if (location.hash) {
   console.log(location)
+  localStorage.setItem("hash", location.hash);
   Auth.parseResponse(location.hash);
 } else {
   if (Config.getValidToken()) {
