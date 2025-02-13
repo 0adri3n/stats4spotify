@@ -224,14 +224,18 @@ if (location.hash) {
   Auth.parseResponse(location);
   window.location = SITE_URL;
   document.querySelector(".container").style.display = "flex";
+  document.querySelector(".profile").style.display = "block";
+
 } else {
   if (Config.getValidToken()) {
     SpotifyApi.getUserProfile();
     SpotifyApi.getTopTracks();
     SpotifyApi.getTopArtists();
     document.querySelector(".container").style.display = "flex";
+    document.querySelector(".profile").style.display = "block";
   }
 }
 
 document.querySelector("#login-button").addEventListener("click", authenticate);
 document.querySelector(".container").style.display = "none";
+document.querySelector(".profile").style.display = "none";
