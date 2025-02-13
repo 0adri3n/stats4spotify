@@ -1,4 +1,4 @@
-var SITE_URL = "https://0adri3n.github.io/stats4spotify/";
+var SITE_URL = "https://0adri3n.github.io/stats4spotify";
 var SPOTIFY_API = "https://api.spotify.com/v1";
 var HIGHLIGHT_TIMEOUT = 100;
 
