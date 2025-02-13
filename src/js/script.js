@@ -231,18 +231,16 @@ function authenticate() {
 }
 
 if (location.hash) {
-  console.log(location)
-  localStorage.setItem("hash", location.hash);
   Auth.parseResponse(location);
+  window.location(SITE_URL);
+  document.querySelector("#container").style.display = "flex";
 } else {
   if (Config.getValidToken()) {
     SpotifyApi.getUserProfile();
     SpotifyApi.getTopTracks();
     SpotifyApi.getTopArtists();
+    document.querySelector("#container").style.display = "flex";
   }
 }
 
 document.querySelector("#login-button").addEventListener("click", authenticate);
-if (Config.getValidToken() == false) {
-  document.querySelector("#container").style.display = "none";
-}
