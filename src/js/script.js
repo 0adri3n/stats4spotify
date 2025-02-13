@@ -32,14 +32,14 @@ var SpotifyApi = {
 
   getTopTracks: function () {
     this.sendRequest(
-      SPOTIFY_API + "/me/top/tracks?limit=5",
+      SPOTIFY_API + "/me/top/tracks?time_range=long_term&limit=10",
       function (error, data) {
         if (error) {
           console.error("Error fetching top tracks:", error);
           return;
         }
         console.log("Top Tracks:", data.items);
-        var container = document.querySelector(".top-items.tracks");
+        var container = document.querySelector(".top-items.tracks.long");
         container.innerHTML = "";
         data.items.forEach((track) => {
           container.innerHTML += `
@@ -51,18 +51,63 @@ var SpotifyApi = {
         });
       }
     );
+
+    this.sendRequest(
+      SPOTIFY_API + "/me/top/tracks?time_range=medium_term&limit=10",
+      function (error, data) {
+        if (error) {
+          console.error("Error fetching top tracks:", error);
+          return;
+        }
+        console.log("Top Tracks:", data.items);
+        var container = document.querySelector(".top-items.tracks.medium");
+        container.innerHTML = "";
+        data.items.forEach((track) => {
+          container.innerHTML += `
+      <div class="top-item">
+        <img src="${track.album.images[0]?.url}" alt="Track">
+        <p>${track.name}</p>
+      </div>
+    `;
+        });
+      }
+    );
+
+    this.sendRequest(
+      SPOTIFY_API + "/me/top/tracks?time_range=short_term&limit=10",
+      function (error, data) {
+        if (error) {
+          console.error("Error fetching top tracks:", error);
+          return;
+        }
+        console.log("Top Tracks:", data.items);
+        var container = document.querySelector(".top-items.tracks.short");
+        container.innerHTML = "";
+        data.items.forEach((track) => {
+          container.innerHTML += `
+          <div class="top-item">
+            <img src="${track.album.images[0]?.url}" alt="Track">
+            <p>${track.name}</p>
+          </div>
+        `;
+        });
+      }
+    );
+
+
+    
   },
 
   getTopArtists: function () {
     this.sendRequest(
-      SPOTIFY_API + "/me/top/artists?limit=5",
+      SPOTIFY_API + "/me/top/artists?time_range=long_term&limit=10",
       function (error, data) {
         if (error) {
           console.error("Error fetching top artists:", error);
           return;
         }
         console.log("Top Artists:", data.items);
-        var container = document.querySelector(".top-items.artists");
+        var container = document.querySelector(".top-items.artists.long");
         container.innerHTML = "";
         data.items.forEach((artist) => {
           container.innerHTML += `
@@ -74,6 +119,49 @@ var SpotifyApi = {
         });
       }
     );
+
+    this.sendRequest(
+      SPOTIFY_API + "/me/top/artists?time_range=medium_term&limit=10",
+      function (error, data) {
+        if (error) {
+          console.error("Error fetching top artists:", error);
+          return;
+        }
+        console.log("Top Artists:", data.items);
+        var container = document.querySelector(".top-items.artists.medium");
+        container.innerHTML = "";
+        data.items.forEach((artist) => {
+          container.innerHTML += `
+          <div class="top-item">
+            <img src="${artist.images[0]?.url}" alt="Artist">
+            <p>${artist.name}</p>
+          </div>
+        `;
+        });
+      }
+    );
+
+    this.sendRequest(
+      SPOTIFY_API + "/me/top/artists?time_range=short_term&limit=10",
+      function (error, data) {
+        if (error) {
+          console.error("Error fetching top artists:", error);
+          return;
+        }
+        console.log("Top Artists:", data.items);
+        var container = document.querySelector(".top-items.artists.short");
+        container.innerHTML = "";
+        data.items.forEach((artist) => {
+          container.innerHTML += `
+          <div class="top-item">
+            <img src="${artist.images[0]?.url}" alt="Artist">
+            <p>${artist.name}</p>
+          </div>
+        `;
+        });
+      }
+    );
+
   },
 };
 
@@ -97,7 +185,10 @@ var Auth = {
       SpotifyApi.getUserProfile();
       SpotifyApi.getTopTracks();
       SpotifyApi.getTopArtists();
-      console.log(Config)
+      document
+        .querySelector("#login-button")
+        .style.display="none"
+
     }
   },
 
