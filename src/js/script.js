@@ -138,7 +138,7 @@ function authenticate() {
 
 if (location.hash) {
   console.log(location)
-  Auth._parseHash(location.hash);
+  Auth.parseResponse(location.hash);
   window.location = SITE_URL;
 } else {
   if (Config.getValidToken()) {
