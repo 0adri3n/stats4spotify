@@ -32,6 +32,14 @@ The goal is to provide a quick and visually appealing way to check your Spotify 
 2. **View your profile** and stats  
 3. **Explore your top artists and tracks**  
 
+## 💌 Credits
+
+Huge thanks to <a href="https://github.com/kaaes">kaaes</a> !
+
+I stole a lot of <a href="https://github.com/kaaes/albums-availability">her code</a> to use the Spotify API with JavaScript only :)
+
+Check out her work.
+
 ## 💡 Contribute  
 
 This project is **open-source**! **Fork it**, test it, and improve it.  
