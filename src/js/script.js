@@ -232,7 +232,7 @@ function authenticate() {
 
 if (location.hash) {
   Auth.parseResponse(location);
-  window.location(SITE_URL);
+  window.location = SITE_URL;
   document.querySelector("#container").style.display = "flex";
 } else {
   if (Config.getValidToken()) {
