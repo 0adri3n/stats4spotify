@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stats4spotify</title>
+    <style>
+        body {
+            font-family: Consolas, monospace;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #1DB954;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .github-btn {
+            background-color: white;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .card {
+            background: #282828;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+        .top-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .top-item {
+            width: 200px;
+            margin: 10px;
+        }
+        .top-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .login-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 25px;
+            background-color: #1DB954;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>stats4spotify</h1>
+        <a href="https://github.com/votre-repo" class="github-btn">GitHub</a>
+    </header>
+    <div class="container">
+        <div class="profile">
+            <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="Profile Picture">
+            <h2>Nom de l'utilisateur</h2>
+            <p>Followers: 1000</p>
+        </div>
+        <div class="card">
+            <h3>Top Tracks</h3>
+            <div class="top-items">
+                <div class="top-item">
+                    <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="Track">
+                    <p>Nom du Track</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Top Artists</h3>
+            <div class="top-items">
+                <div class="top-item">
+                    <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="Artist">
+                    <p>Nom de l'Artiste</p>
+                </div>
+            </div>
+        </div>
+        <button href="#" class="login-btn" id="login-button">Se connecter</button>
+    </div>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="src/js/sscript.js"></script>
+
+
+</body>
+</html>
